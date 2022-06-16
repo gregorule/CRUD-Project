@@ -1,6 +1,6 @@
 from application import app, db
 from application.models import ToDos
-from flask import redirect, url_for
+from flask import redirect, url_for, render_template
 
 @app.route('/')
 def index():
@@ -10,6 +10,14 @@ def index():
         empstr += f'{t.id} {t.task} {t.completed} \n'
 
     return empstr
+
+@app.route('/about')
+def index():
+    return render_template('about.html')
+
+@app.route('/tasks')
+def index():
+    return render_template('tasks.html')
 
 @app.route('/add/<new_task>')
 def add(new_task):
