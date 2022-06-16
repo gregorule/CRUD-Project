@@ -12,11 +12,11 @@ def index():
     return empstr
 
 @app.route('/about')
-def index():
+def about():
     return render_template('about.html')
 
 @app.route('/tasks')
-def index():
+def tasks():
     return render_template('tasks.html')
 
 @app.route('/add/<new_task>')
