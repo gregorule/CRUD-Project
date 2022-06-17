@@ -2,7 +2,10 @@
 {% block body %}
 <br>
 {% for todo in todos %}
-<p>Task{{ todo.task }}</p><br>
-<p>Completed: {{todo.completed }}</p><br>
+<p>Task: {{ todo.task }} </p>
+<p>Completed: {{ todo.completed }}</p>
+<form action="{{ url_for('delete', id=todo.id) }}">
+<button type="Submit">Delete Task</button>
+</form>
 {% endfor %}
 {% endblock body %}
